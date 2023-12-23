@@ -1,0 +1,7 @@
+~# apt -y install apache2
+
+UBAH KONFIGURASI PADA SETIAP FILE YANG ADA PADA FOLDER /etc/apache2/
+
+SETELAH SELESAI MASUKKAN PERINTAH
+
+~#service apache2 restart

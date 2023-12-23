@@ -1,0 +1,37 @@
+~#apt install php8.1 php8.1-mbstring php-pear php-fpm -y
+
+---------------------------------------EDIT FILE PADA FOLDER YANG TERTERA--------------------------------------
+
+~#a2enmod proxy_fcgi setenvif
+
+~#a2enconf php8.1-fpm
+
+~#service php8.1-fpm restart
+~#service apache2 restart
+
+----------------------------------LAKUKAN INSTALASI DAN KONFIGURASI PADA DATABASE------------------------------
+
+---------------------------------LANJUTKAN KONFIGURASI SETELAH KONFIGURASI DATABASE----------------------------
+
+
+~#apt -y install php-common php-gd php-mysql php-enchant hunspell
+
+-----------------------------------------KONFIGURASI PADA DIREKTORI php----------------------------------------
+
+~#service php8.1-fpm restart
+
+~#cd /var/www/
+
+~#wget https://wordpress.org/latest.tar.gz
+
+~#tar zxvf latest.tar.gz -C /var/www/
+
+~#chown -R www-data:www-data /var/www/wordpress
+
+----------------------------------KONFIGURASI PADA DIREKTORI apache2/conf-available----------------------------
+
+~#a2enconf wordpress
+
+~#service apache2 restart
+
+-------------------------------------AKSES URL UNTUK KONFIGURASI WORDPRESS-------------------------------------
